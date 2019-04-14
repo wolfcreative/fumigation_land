@@ -15,14 +15,15 @@ hr{width:43px;border-color:#3cc249;border-width:2px}
 
 header{
     .uk-sticky{
-        background:#fafafa;padding:10px 0;
-        
-        .uk-navbar-nav > li{
-            >a{
-                color:#575757;text-transform:none;font:14px "TT Norms Medium",sans-serif;
-                &:hover,&:focus{color:#3cc249}
+        background:#fafafa;padding:15px 0;
+        @media(max-width:639px){padding:10px 0}
 
-                
+        img{@media(max-width:439px){max-width:150px}}
+        
+        .uk-navbar-nav>li{
+            >a{
+                min-height:40px;color:#575757;text-transform:none;font:14px "TT Norms Medium",sans-serif;
+                &:hover,&:focus{color:#3cc249}
             }
             @media(max-width:1199px){display:none}
         }
@@ -58,13 +59,13 @@ header{
 }
 
 .services{
-    padding:35px 0;
+    padding:45px 0;
 
     .uk-background-cover{
         border-radius:7px;
 
         .wrapper{
-            min-height:190px;background-color: rgba(73, 73, 73, 0.78);border-radius:7px;padding: 15px 25px;
+            min-height:190px;background-color:rgba(73, 73, 73, 0.78);border-radius:7px;padding:15px 25px;
     
             h3{
                 font-size:26px;color:#3cc249;margin:0;
@@ -82,12 +83,81 @@ header{
 
 .companies{padding:61px 0 55px}
 
+.worksteps{
+    background:#3cc249;padding:45px 0;
+
+    .number{font:bold 36px 'TT Norms Medium',sans-serif}
+    h3{font-size:22px;margin:15px 0 0}
+    hr{width:61px;border-color:#fff}
+}
+
+.ourworks{
+    padding:45px 0;
+
+    img{width:100%}
+
+    .uk-slidenav{
+        background:#3cc249;border-radius:100px;padding:7px 12px;
+        &:hover,&:focus{background:darken(#3cc249, 10%)}
+    }
+
+    .video{border:2px solid #3cc249}
+
+    .uk-list{
+        li{
+            position: relative;padding-left:55px;
+            &:before{content:url(../img/awesome/li.svg);width:40px;position:absolute;top:50%;left:20px;transform: translate(-50%, -50%)}
+        }
+    }
+}
+
+.reviews{padding:45px 0}
+
+.license{padding:45px 0}
+
+footer{
+    background:#fafafa;padding:40px 0;color:rgb(160, 160, 160)  ;
+    
+    img{@media(max-width:439px){max-width:150px}}
+    
+    .uk-navbar-nav>li{
+        >a{
+            min-height:40px;color:#575757;text-transform:none;font:14px "TT Norms Medium",sans-serif;
+            &:hover,&:focus{color:#3cc249}
+        }
+        @media(max-width:1199px){display:none}
+    }
+
+    .phone{
+        a{font:20px "TT Norms Medium",sans-serif}
+        span{font-size:14px;color:#575757}
+    }
+}
+
 /* Headers */
-h2{font:36px 'TT Norms Regular',sans-serif}
+h2{
+    font:36px 'TT Norms Regular',sans-serif;
+    @media (max-width:959px){font-size:28px}
+    @media (max-width:639px){font-size:24px}
+}
 h3{font:16px 'TT Norms Medium',sans-serif}
 
 /* Buttons */
-.uk-button-green{
-    background:#3cc249;color:#fff;font-size:16px;line-height:40px;border:1px solid #3cc249;text-transform:none;border-radius:100px;
-    &:hover,&:focus{background:#ffe500;border-color:#ffe500;color:#111}
+.uk-button{
+    font-size:16px;line-height:40px;text-transform:none;border-radius:100px;
+
+    &.uk-button-green{
+        background:#3cc249;color:#fff;border:1px solid #3cc249;
+        &:hover,&:focus{background:#ffe500;border-color:#ffe500;color:#111}
+    }
+    &.uk-button-yellow{
+        background:#ffe500;color:#111;border:1px solid #ffe500;
+        &:hover,&:focus{background:darken(#ffe500, 5%);border-color:darken(#ffe500, 5%);color:#111}
+    }
 }
+
+/* Replaces */
+.uk-light *{color:#fff}
+.uk-dotnav>*>*{width:16px;height:16px}
+.uk-dotnav>.uk-active>*{background:#3cc249}
+.uk-lightbox{background:rgba(0,0,0,.7)}
