@@ -2,16 +2,21 @@
 @font-face {font-family:'TT Norms Regular';src:url('../fonts/TTNorms-Regular.eot');src:url('../fonts/TTNorms-Regular.eot?#iefix') format('embedded-opentype'),url('../fonts/TTNorms-Regular.woff') format('woff'),url('../fonts/TTNorms-Regular.ttf') format('truetype');font-weight:normal;font-style:normal}
 @font-face {font-family:'TT Norms Medium';src:url('../fonts/TTNorms-Medium.eot');src:url('../fonts/TTNorms-Medium.eot?#iefix') format('embedded-opentype'),url('../fonts/TTNorms-Medium.woff') format('woff'),url('../fonts/TTNorms-Medium.ttf') format('truetype');font-weight:normal;font-style:normal}
 
+%container-padding{padding:45px 0 55px}
+$color-green:#3cc249;
+$color-grey:#575757;
+
 body{
     max-width:1920px;margin:0 auto;font-family:'TT Norms Regular',sans-serif;font-size:16px;line-height:1.4;color:#111;
     @media (max-width:959px){font-size:14px;line-height:22px}
 }
 .uk-container{max-width:1140px}
-a{color:#575757;transition:.2s ease-in-out}
-a:hover,a:focus{color:#3cc249;text-decoration:none;transition:.2s ease-in-out}
+a{color:$color-grey;transition:.2s ease-in-out}
+a:hover,a:focus{color:$color-green;text-decoration:none;transition:.2s ease-in-out}
 b,strong{font-weight:normal;font-family:'TT Norms Medium',sans-serif}
 sup{font-size:11px}
-hr{width:43px;border-color:#3cc249;border-width:2px}
+hr{width:43px;border-color:$color-green;border-width:2px}
+
 
 header{
     .uk-sticky{
@@ -22,15 +27,15 @@ header{
         
         .uk-navbar-nav>li{
             >a{
-                min-height:40px;color:#575757;text-transform:none;font:14px "TT Norms Medium",sans-serif;
-                &:hover,&:focus{color:#3cc249}
+                min-height:40px;color:$color-grey;text-transform:none;font:14px "TT Norms Medium",sans-serif;
+                &:hover,&:focus{color:$color-green}
             }
             @media(max-width:1199px){display:none}
         }
 
         .phone{
             a{font:20px "TT Norms Medium",sans-serif}
-            span{font-size:14px;color:#575757}
+            span{font-size:14px;color:$color-grey}
         }
     }
 }
@@ -39,18 +44,21 @@ header{
     background:url(../img/backgrounds/afterhead.jpg) no-repeat right center / cover;padding:45px 0 55px;
     
     h1{
-        font:26px "TT Norms Medium",sans-serif;
-        @media (max-width:639px) {font-size:20px}
+        font:39px "TT Norms Medium",sans-serif;
+        @media (max-width:1279px){font-size:38px}
+        @media (max-width:959px){font-size:28px}
+        @media (max-width:639px){font-size:24px}
+
+        span{
+            font-size:30px;color:$color-green;display:block;
+            @media (max-width:1279px){font-size:28px}
+            @media (max-width:959px){font-size:22px}
+            @media (max-width:639px){font-size:20px}
+        }
     }
 }
 
-.custom-form{
-    max-width:440px;background:#fff; border:4px solid #3cc249;border-radius:1px;padding:30px 25px 20px;box-sizing:border-box;
-
-    input{
-        border:2px solid #ccc;border-radius:100px;
-    }
-}
+.custom-form{max-width:440px;background:#fff; border:4px solid $color-green;border-radius:1px;padding:30px 25px 20px;box-sizing:border-box}
 
 .ourpluses{
     background:url(../img/backgrounds/crystal.jpg) no-repeat center / cover;padding:45px 0 50px;
@@ -59,7 +67,7 @@ header{
 }
 
 .services{
-    padding:45px 0;
+    @extend %container-padding;
 
     .uk-background-cover{
         border-radius:7px;
@@ -68,11 +76,41 @@ header{
             min-height:190px;background-color:rgba(73, 73, 73, 0.78);border-radius:7px;padding:15px 25px;
     
             h3{
-                font-size:26px;color:#3cc249;margin:0;
-                @media (max-width:639px) {font-size:20px}
+                font-size:26px;color:$color-green;margin:0;
+                @media (max-width:639px){font-size:20px}
             }
 
             p{color:#fff}
+        }
+    }
+}
+
+.price{
+    @extend %container-padding;
+
+    .uk-card{@media (max-width:439px){padding-left:10px;padding-right:10px}}
+
+    .uk-card-white{
+        background:#f5f6f5;
+
+        .uk-subnav li{
+            margin-bottom:5px;
+            
+            a{
+                background:#e1e1e1;color:#797979;text-transform:none;font-size:15px;border-radius:100px;padding:10px 20px;
+                @media (max-width:439px){font-size:13px;padding:6px 12px}
+            }
+            &.uk-active a{background:$color-green;color:#fff}
+        }
+
+        .uk-card-default{
+            font:18px 'TT Norms Medium',sans-serif;color:#111;
+            @media (max-width:439px){font-size:14px}
+
+            span{
+                font-size:22px;color:$color-green;display:block;
+                @media (max-width:439px){font-size:16px}
+            }
         }
     }
 }
@@ -84,7 +122,8 @@ header{
 .companies{padding:61px 0 55px}
 
 .worksteps{
-    background:#3cc249;padding:45px 0;
+    @extend %container-padding;
+    background:$color-green;
 
     .number{font:bold 36px 'TT Norms Medium',sans-serif}
     h3{font-size:22px;margin:15px 0 0}
@@ -92,16 +131,16 @@ header{
 }
 
 .ourworks{
-    padding:45px 0;
+    @extend %container-padding;
 
     img{width:100%}
 
     .uk-slidenav{
-        background:#3cc249;border-radius:100px;padding:7px 12px;
-        &:hover,&:focus{background:darken(#3cc249, 10%)}
+        background:$color-green;border-radius:100px;padding:7px 12px;
+        &:hover,&:focus{background:darken($color-green, 10%)}
     }
 
-    .video{border:2px solid #3cc249}
+    .video{border:2px solid $color-green}
 
     .uk-list{
         li{
@@ -111,9 +150,9 @@ header{
     }
 }
 
-.reviews{padding:45px 0}
+.reviews{@extend %container-padding}
 
-.license{padding:45px 0}
+.license{@extend %container-padding}
 
 footer{
     background:#fafafa;padding:40px 0;color:rgb(160, 160, 160)  ;
@@ -122,15 +161,15 @@ footer{
     
     .uk-navbar-nav>li{
         >a{
-            min-height:40px;color:#575757;text-transform:none;font:14px "TT Norms Medium",sans-serif;
-            &:hover,&:focus{color:#3cc249}
+            min-height:40px;color:$color-grey;text-transform:none;font:14px "TT Norms Medium",sans-serif;
+            &:hover,&:focus{color:$color-green}
         }
         @media(max-width:1199px){display:none}
     }
 
     .phone{
         a{font:20px "TT Norms Medium",sans-serif}
-        span{font-size:14px;color:#575757}
+        span{font-size:14px;color:$color-grey}
     }
 }
 
@@ -147,7 +186,7 @@ h3{font:16px 'TT Norms Medium',sans-serif}
     font-size:16px;line-height:40px;text-transform:none;border-radius:100px;
 
     &.uk-button-green{
-        background:#3cc249;color:#fff;border:1px solid #3cc249;
+        background:$color-green;color:#fff;border:1px solid $color-green;
         &:hover,&:focus{background:#ffe500;border-color:#ffe500;color:#111}
     }
     &.uk-button-yellow{
@@ -159,5 +198,6 @@ h3{font:16px 'TT Norms Medium',sans-serif}
 /* Replaces */
 .uk-light *{color:#fff}
 .uk-dotnav>*>*{width:16px;height:16px}
-.uk-dotnav>.uk-active>*{background:#3cc249}
+.uk-dotnav>.uk-active>*{background:$color-green}
 .uk-lightbox{background:rgba(0,0,0,.7)}
+.uk-input{border:2px solid #ccc;border-radius:100px}
