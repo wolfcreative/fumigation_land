@@ -2,7 +2,10 @@
 @font-face {font-family:'TT Norms Regular';src:url('../fonts/TTNorms-Regular.eot');src:url('../fonts/TTNorms-Regular.eot?#iefix') format('embedded-opentype'),url('../fonts/TTNorms-Regular.woff') format('woff'),url('../fonts/TTNorms-Regular.ttf') format('truetype');font-weight:normal;font-style:normal}
 @font-face {font-family:'TT Norms Medium';src:url('../fonts/TTNorms-Medium.eot');src:url('../fonts/TTNorms-Medium.eot?#iefix') format('embedded-opentype'),url('../fonts/TTNorms-Medium.woff') format('woff'),url('../fonts/TTNorms-Medium.ttf') format('truetype');font-weight:normal;font-style:normal}
 
-%container-padding{padding:45px 0 55px}
+%container-padding{
+    padding:45px 0 55px;
+    @media (max-width:959px){padding:30px 0 40px}
+}
 $color-green:#3cc249;
 $color-grey:#575757;
 
@@ -16,7 +19,6 @@ a:hover,a:focus{color:$color-green;text-decoration:none;transition:.2s ease-in-o
 b,strong{font-weight:normal;font-family:'TT Norms Medium',sans-serif}
 sup{font-size:11px}
 hr{width:43px;border-color:$color-green;border-width:2px}
-
 
 header{
     .uk-sticky{
@@ -41,7 +43,9 @@ header{
 }
 
 .afterhead{
-    background:url(../img/backgrounds/afterhead.jpg) no-repeat right center / cover;padding:45px 0 55px;
+    @extend %container-padding;
+    
+    background:url(../img/backgrounds/afterhead.jpg) no-repeat center / cover;overflow:hidden;
     
     h1{
         font:39px "TT Norms Medium",sans-serif;
@@ -56,12 +60,19 @@ header{
             @media (max-width:639px){font-size:20px}
         }
     }
+
+    .custom-form:after{
+        content:url(../img/klesch.png);display:block;position:absolute;top:-30px;right:-35px;
+        @media (max-width:439px){top:-43px}
+    }
 }
 
-.custom-form{max-width:440px;background:#fff; border:4px solid $color-green;border-radius:1px;padding:30px 25px 20px;box-sizing:border-box}
+.custom-form{max-width:440px;position:relative;background:#fff;border:4px solid $color-green;border-radius:1px;padding:30px 25px 20px;box-sizing:border-box}
 
 .ourpluses{
-    background:url(../img/backgrounds/crystal.jpg) no-repeat center / cover;padding:45px 0 50px;
+    @extend %container-padding;
+
+    background:url(../img/backgrounds/crystal.jpg) no-repeat center / cover;
 
     h3{max-width:196px}
 }
@@ -115,9 +126,7 @@ header{
     }
 }
 
-.callback-block{
-    background:url(../img/backgrounds/callback.jpg) no-repeat right center / cover;padding:61px 0 55px;
-}
+.callback-block{background:url(../img/backgrounds/callback.jpg) no-repeat right center / cover;padding:61px 0 55px}
 
 .companies{padding:61px 0 55px}
 
@@ -144,18 +153,18 @@ header{
 
     .uk-list{
         li{
-            position: relative;padding-left:55px;
-            &:before{content:url(../img/awesome/li.svg);width:40px;position:absolute;top:50%;left:20px;transform: translate(-50%, -50%)}
+            position:relative;padding-left:55px;
+            &:before{content:url(../img/awesome/li.svg);width:40px;position:absolute;top:50%;left:20px;transform:translate(-50%, -50%)}
         }
     }
 }
 
-.reviews{@extend %container-padding}
+.reviews{@extend %container-padding;}
 
-.license{@extend %container-padding}
+.license{@extend %container-padding;}
 
 footer{
-    background:#fafafa;padding:40px 0;color:rgb(160, 160, 160)  ;
+    background:#fafafa;padding:40px 0;color:rgb(160, 160, 160);
     
     img{@media(max-width:439px){max-width:150px}}
     
