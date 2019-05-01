@@ -21,11 +21,13 @@ sup{font-size:11px}
 hr{width:43px;border-color:$color-green;border-width:2px}
 
 header{
+    background:#fafafa;
+
     .uk-sticky{
         background:#fafafa;padding:15px 0;
         @media(max-width:639px){padding:10px 0}
 
-        img{@media(max-width:439px){max-width:150px}}
+        img{@media(max-width:639px){max-width:150px}}
         
         .uk-navbar-nav>li{
             >a{
@@ -34,10 +36,19 @@ header{
             }
             @media(max-width:1199px){display:none}
         }
+    }
 
-        .phone{
-            a{font:20px "TT Norms Medium",sans-serif}
-            span{font-size:14px;color:$color-grey}
+    .phone{
+        padding-top:10px;padding-bottom:10px;
+
+        a{
+            font:20px "TT Norms Medium",sans-serif;
+            @media (max-width:439px){font-size:18px}
+        }
+
+        span{
+            font-size:14px;color:$color-grey;
+            @media (max-width:439px){font-size:13px}
         }
     }
 }
